@@ -9,9 +9,11 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
   devise_scope :user do
     get 'logout', to: 'devise/sessions#destroy'
   end
+
   # Admin dashboard route
   get 'admin_dashboard', to: 'users#admin_dashboard', as: 'admin_dashboard'
   get 'user_dashboard', to: 'users#user_dashboard', as: 'user_dashboard'
